@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.view.MotionEvent
 import android.view.View
 import me.dontsleep.labyrinth.game.Game
+import me.dontsleep.labyrinth.utils.MyTimer
 
 class Canvas(context: Context?) : View(context){
     var game : Game? = null
@@ -13,14 +14,14 @@ class Canvas(context: Context?) : View(context){
     }
     override fun onDraw(canvas: Canvas?) {
         if(game == null) game = Game(0f, 0f, width.toFloat(), height.toFloat())
+        game?.let{
+            game?.update()
+        }
         canvas?.let {
             game?.render(canvas)
         }
     }
     fun update(){
-        game?.let{
-            game?.update()
-        }
         invalidate()
     }
     override fun onTouchEvent(event: MotionEvent?): Boolean {
