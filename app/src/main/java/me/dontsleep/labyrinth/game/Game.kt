@@ -42,5 +42,9 @@ class GameActivity{
         var currentScreen : Panel? = null
         var width : Float = 0f
         var height : Float = 0f
+        var unitSize : Float = 50f
+        var mapSize : Int = 3
+        var mapSeed : Int = 3
+        var map : Array<IntArray> = me.dontsleep.labyrinth.world.Map().genMap(mapSize, 0, 0, 2, 2, mapSeed)
     }
 }

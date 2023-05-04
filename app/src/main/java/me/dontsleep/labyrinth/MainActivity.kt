@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             while(true){
                 MyTimer.update()
                 if(fpsLimit.isUpdate(16, true)){
-                    MyTimer.updateDelta()
                     myCanvas.update()
                 }
             }

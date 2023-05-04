@@ -3,13 +3,14 @@ package me.dontsleep.labyrinth.entity
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import me.dontsleep.labyrinth.game.GameActivity
 import kotlin.math.*
 
 open class Entity {
     var x : Float = 0f
     var y : Float = 0f
-    var width : Float = 1f
-    var height : Float = 1f
+    var width : Float = GameActivity.unitSize
+    var height : Float = GameActivity.unitSize
     var prex : Float = 0f
     var prey : Float = 0f
     open fun update(){

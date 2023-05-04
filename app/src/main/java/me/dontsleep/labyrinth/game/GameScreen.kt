@@ -46,7 +46,9 @@ class GameScreen(x: Float, y: Float, width: Float, height: Float) : Panel(x, y, 
     }
 
     override fun render(canvas: Canvas) {
+        canvas.translate(-player.x+width/2, -player.y+height/2)
         world.render(canvas)
+        canvas.translate(player.x-width/2, player.y-height/2)
         super.render(canvas)
     }
     override fun breakTouch(): Boolean {

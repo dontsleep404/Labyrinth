@@ -15,6 +15,7 @@ class Canvas(context: Context?) : View(context){
     override fun onDraw(canvas: Canvas?) {
         if(game == null) game = Game(0f, 0f, width.toFloat(), height.toFloat())
         game?.let{
+            MyTimer.updateDelta()
             game?.update()
         }
         canvas?.let {
