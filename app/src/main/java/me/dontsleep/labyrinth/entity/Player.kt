@@ -2,23 +2,63 @@ package me.dontsleep.labyrinth.entity
 
 import android.graphics.*
 import me.dontsleep.labyrinth.utils.MyTimer
+import me.dontsleep.labyrinth.utils.Timer
 import kotlin.math.*
 
 
 class Player : Entity() {
     var color : Int = Color.GREEN;
-    var dr : Float = 1f;
+    var timer : Timer = Timer()
+    var speed : Float = 500f
+    var stage = 0
+    var deltaX = 0f
+    var deltaY = 0f
     override fun update() {
-        var dx = x - prex
-        var dy = y - prey
-        dr += 0.1f
+        deltaX = prex - x
+        deltaY = prey - y
+        if(timer.isUpdate(1000, true)){
+            stage++
+            if(stage > 2) stage = 0
+        }
         super.update()
     }
     override fun render(canvas: Canvas) {
-        var paint = Paint()
+        val paint = Paint()
+        val centerX: Float = 0f
+        val centerY: Float = 0f
+        val size: Float = width
+
+        // Draw the player shape
+        paint.color = Color.WHITE
         paint.style = Paint.Style.FILL
-        paint.color = color
-        canvas.drawRect(-width/2, -height/2, width/2,height/2,paint)
-        paint.color = Color.RED
+        canvas.drawRect(centerX - size / 2f, centerY - size / 2f, centerX + size / 2f, centerY + size / 2f, paint)
+
+        // Draw the square outline
+        paint.color = Color.BLACK
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = size / 20f
+        canvas.drawRect(centerX - size / 2f, centerY - size / 2f, centerX + size / 2f, centerY + size / 2f, paint)
+
+        // Calculate eye positions based on delta values
+        // SQUARE EYE
+        val eyeSize = size / 5f
+        val eyeX = centerX - width/4 - deltaX / 2f
+        val eyeY = centerY - deltaY / 2f - height / 6
+
+        val eyeX2 = centerX + width/4 - deltaX / 2f
+        val eyeY2 = centerY - deltaY / 2f - height / 6
+        
+        // Draw the eyes
+        paint.color = Color.BLACK
+        canvas.drawRect(eyeX - eyeSize / 2f, eyeY - eyeSize / 2f, eyeX + eyeSize / 2f, eyeY + eyeSize / 2f, paint)
+        canvas.drawRect(eyeX2 - eyeSize / 2f, eyeY2 - eyeSize / 2f, eyeX2 + eyeSize / 2f, eyeY2 + eyeSize / 2f, paint)
+
+        // draw mount
+        val mountSize = size / 8f
+        val mountX = centerX - deltaX / 2f
+        val mountY = centerY + height / 6
+        paint.color = Color.BLACK
+        canvas.drawRect(mountX - mountSize, mountY - mountSize / 2f, mountX + mountSize, mountY + mountSize / 2f, paint)
+        
     }
 }

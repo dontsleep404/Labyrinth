@@ -18,11 +18,13 @@ class JoyStick(x: Float, y: Float, width: Float, height: Float) : Panel(x, y, wi
         var paint = Paint()
         paint.strokeWidth = 10f
         paint.color = Color.RED
-        paint.style = Paint.Style.STROKE
+        paint.style = Paint.Style.FILL
         oldTouch?.let {
+            paint.color = Color.parseColor("#FF4081") // Pink color
             canvas.drawCircle(oldTouch!!.posX, oldTouch!!.posY, joyRadius, paint)
             newTouch?.let {
                 var angle = oldTouch!!.getAngle(newTouch!!)
+                paint.color = Color.parseColor("#FF80AB")
                 if(newTouch!!.getDist(oldTouch!!) >= joyRadius)
                     canvas.drawCircle(joyRadius * cos(angle) + oldTouch!!.posX, joyRadius * sin(angle) + oldTouch!!.posY, joyFinger, paint)
                 else{
