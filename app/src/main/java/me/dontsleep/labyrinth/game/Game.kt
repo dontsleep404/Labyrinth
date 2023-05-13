@@ -49,7 +49,6 @@ class GameActivity{
         var mapSize : Int = 5
         var mapSeed : Int = 3
         var map : Array<IntArray> = me.dontsleep.labyrinth.world.Map().genMap(mapSize, 0, 0, 2, 2, mapSeed)
-        var database : SQLiteDatabase? = null
         var paint = android.graphics.Paint()
     }
 }
