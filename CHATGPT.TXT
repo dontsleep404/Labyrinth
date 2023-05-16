@@ -1,0 +1,13 @@
+Bản đồ đa dạng: Tạo ra nhiều loại bản đồ với cấu trúc và môi trường khác nhau. Bạn có thể có các môi trường như rừng, núi, sa mạc, hoặc đô thị. Mỗi môi trường có thể có các tính chất độc đáo và thách thức riêng.
+
+Quả bom đa dạng: Thiết lập hệ thống quả bom có nhiều loại, mỗi loại có hiệu ứng và tác động khác nhau. Ví dụ: bom chậm lại người chơi, bom phát nổ lớn tạo ra sự phá hủy, bom hút chéo người chơi đến vị trí khác.
+
+Cấp độ khó: Tạo ra các cấp độ khó khác nhau để người chơi thử thách bản thân. Bạn có thể tăng số lượng bom, tăng tốc độ xuất hiện của bom, hoặc thậm chí thêm các yếu tố khó khăn khác như quái vật hoặc cản trở.
+
+Power-ups: Bổ sung các vật phẩm hỗ trợ như mũ bảo hiểm để tránh bom trong một khoảng thời gian ngắn, giày tăng tốc để di chuyển nhanh hơn, hay khiên để phá hủy bom.
+
+Thưởng điểm và thành tích: Tạo hệ thống điểm số và bảng xếp hạng để người chơi cạnh tranh với nhau. Bạn có thể thêm thành tích đặc biệt khi người chơi đạt được mục tiêu như không bước vào bom trong một khoảng thời gian hoặc hoàn thành bản đồ trong thời gian ngắn.
+
+Chế độ chơi đa người: Nếu muốn, bạn có thể tạo ra chế độ chơi đa người để người chơi có thể tranh đấu với nhau. Bạn có thể thêm chế độ tự do hoặc chế độ đấu đội để người chơi cùng hợp tác hoặc đối đầu.
+
+Đồ họa và âm thanh: Tạo ra đồ họa và âm thanh hấp dẫn để làm cho trò chơi thêm sống động và hấp dẫn. Sử dụng hiệu ứng âm thanh khi bom phát nổ hoặc khi người chơi bước vào bom để tăng tính thách thức và cảm giác kịch tính.

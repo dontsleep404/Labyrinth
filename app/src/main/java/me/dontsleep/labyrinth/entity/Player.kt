@@ -10,6 +10,8 @@ class Player : Entity() {
     var color : Int = Color.GREEN;
     var timer : Timer = Timer()
     var speed : Float = 500f
+    var health : Int = 3
+    var maxHealth : Int = 3
     var stage = 0
     var deltaX = 0f
     var deltaY = 0f
@@ -22,6 +24,10 @@ class Player : Entity() {
         }
         super.update()
     }
+    fun damage(){
+        health--
+    }
+    fun isDead() = health <= 0
     override fun render(canvas: Canvas) {
         val paint = Paint()
         val centerX: Float = 0f
@@ -59,6 +65,16 @@ class Player : Entity() {
         val mountY = centerY + height / 6
         paint.color = Color.BLACK
         canvas.drawRect(mountX - mountSize, mountY - mountSize / 2f, mountX + mountSize, mountY + mountSize / 2f, paint)
+        // draw bar on head
+        val barSize = size / 2f
+        val barX = centerX
+        val barY = centerY - height
+        paint.color = Color.BLACK
+        canvas.drawRect(barX - barSize, barY - barSize / 4f, barX + barSize, barY + barSize / 4f, paint)
+        paint.color = Color.RED
+        paint.style = Paint.Style.FILL
+        canvas.drawRect(barX - barSize * health / maxHealth, barY - barSize / 4f, barX + barSize * health / maxHealth, barY + barSize / 4f, paint)
+        // draw bar on foot
         
     }
 }

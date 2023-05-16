@@ -12,12 +12,8 @@ import me.dontsleep.labyrinth.utils.Timer
 class MainActivity : AppCompatActivity() {
     lateinit var myCanvas: Canvas
 
-    private lateinit var databaseHelper: DatabaseHelper
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        databaseHelper = DatabaseHelper(this)
-        GameActivity.database = databaseHelper.writableDatabase
         window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         window?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         window.decorView.apply {
@@ -44,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         }.start()
     }
     override fun onDestroy() {
-        GameActivity.database?.close()
         super.onDestroy()
     }
 }

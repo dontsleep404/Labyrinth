@@ -65,4 +65,22 @@ class Map(){
         val maze = Maze(n, x1, y1, x2, y2, seed)
         return maze.getMap()
     }
+    public fun startMap(n: Int, x1: Int, y1: Int, x2: Int, y2: Int, seed: Int = Random.nextInt()): Array<IntArray> {
+        val map = Array(2*n+1) { IntArray(2*n+1) }
+        // set all to 1
+        for (i in 0 until 2*n+1) {
+            for (j in 0 until 2*n+1) {
+                map[i][j] = 1
+            }
+        }
+        for (i in 0 until 2*n+1) {
+            map[i][0] = 0
+            map[i][2*n] = 0
+        }
+        for (i in 0 until 2*n+1) {
+            map[0][i] = 0
+            map[2*n][i] = 0
+        }
+        return map
+    }
 }
