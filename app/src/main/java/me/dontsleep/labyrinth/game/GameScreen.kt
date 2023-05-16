@@ -91,7 +91,9 @@ class GameScreen(x: Float, y: Float, width: Float, height: Float) : Panel(x, y, 
 
     override fun render(canvas: Canvas) {
         canvas.translate(-player.x+width/2, -player.y+height/2)
-
+        GameActivity.paint.textSize = 100f
+        GameActivity.paint.textAlign = Paint.Align.CENTER
+        GameActivity.paint.typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
         val map = GameActivity.map
         val shadowSize = 10f
         for(i in 0 until map.size){
@@ -122,9 +124,6 @@ class GameScreen(x: Float, y: Float, width: Float, height: Float) : Panel(x, y, 
         }
         if(GameActivity.level == 0){
             GameActivity.paint.color = Color.parseColor("#000000")
-            GameActivity.paint.textSize = 100f
-            GameActivity.paint.textAlign = Paint.Align.CENTER
-            GameActivity.paint.typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
             var text = "Labyrinth"
             var centerX = (GameActivity.unitSize) * (GameActivity.mapSize + 0.5f)
             var centerY = height/2 - 100f
